@@ -15,7 +15,7 @@ jobs:
           echo "This is the second message from CI/CD..." >> messages.txt
 
       - name: Upload messages as artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: ci-messages
           path: messages.txt
