@@ -3,7 +3,7 @@ name: Simple CI
 on: [push]
 
 jobs:
-  echo-job:
+  echo-jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Echo message
