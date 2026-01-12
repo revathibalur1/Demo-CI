@@ -1,4 +1,4 @@
-name: Simple CI
+name: Simple CI with Artifacts
 
 on: [push]
 
@@ -6,7 +6,16 @@ jobs:
   echo-jobs:
     runs-on: ubuntu-latest
     steps:
-      - name: Echo message
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Create messages file
         run: |
-          echo "Hello from GitHub Actions CI/CD"
-          echo "This is the second messgae from CI/CD..."
+          echo "Hello from GitHub Actions CI/CD" > messages.txt
+          echo "This is the second message from CI/CD..." >> messages.txt
+
+      - name: Upload messages as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: ci-messages
+          path: messages.txt
