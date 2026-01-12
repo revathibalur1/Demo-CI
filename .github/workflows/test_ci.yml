@@ -8,5 +8,4 @@ jobs:
     steps:
       - name: Echo message
         run: echo "Hello from GitHub Actions CI/CD"
-      - name: Echo second message
         run: echo "This is the second messgae from CI/CD..."
