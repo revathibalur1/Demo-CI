@@ -1,7 +1,6 @@
 name: Secondary CI
 
 on:
-  workflow_dispatch: {}        # manual trigger
   workflow_run:
     workflows:
       - "Main CI"
