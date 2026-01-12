@@ -1,19 +1,19 @@
-name: Secondary CI
+# name: Secondary CI
 
-on:
-  workflow_run:
-    workflows:
-      - "Main CI"
-    types:
-      - completed
+# on:
+#   workflow_run:
+#     workflows:
+#       - "Main CI"
+#     types:
+#       - completed
 
-jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+# jobs:
+#   test:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout repository
+#         uses: actions/checkout@v3
 
-      - name: Run tests
-        run: |
-          echo "Secondary CI: Running tests"
+#       - name: Run tests
+#         run: |
+#           echo "Secondary CI: Running tests"
