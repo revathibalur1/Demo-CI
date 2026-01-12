@@ -1,12 +1,12 @@
-name: Main CI
+#name: Main CI
 
-on: [push]
+# on: [push]
 
-jobs:
-  echo-jobs:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Echo message
-        run: |
-          echo "Hello from GitHub Actions CI/CD"
-          echo "This is the second messgae from CI/CD..."
+# jobs:
+#   echo-jobs:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Echo message
+#         run: |
+#           echo "Hello from GitHub Actions CI/CD"
+#           echo "This is the second messgae from CI/CD..."
