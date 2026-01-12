@@ -19,10 +19,18 @@ jobs:
         run: |
           echo "Hello from GitHub Actions CI/CD" > messages.txt
           echo "This is the second message from CI/CD..." >> messages.txt
+          echo "With cahce..."
 
       - name: Save cache
         uses: actions/cache@v4
         with:
           path: messages.txt
           key: ${{ runner.os }}-messages
+          
+      - name: Upload messages as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ci-messages
+          path: messages.txt
+
 
