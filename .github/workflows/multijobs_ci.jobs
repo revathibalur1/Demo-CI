@@ -1,0 +1,35 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "Compiling the code..."
+          echo "Compile complete."
+
+  unit-test:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - run: |
+          echo "Running unit tests..."
+          echo "Code coverage is 90%"
+
+  lint-test:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - run: |
+          echo "Linting code..."
+          echo "No lint issues found."
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: [unit-test, lint-test]
+    steps:
+      - run: |
+          echo "Deploying application..."
+          echo "Application successfully deployed."
