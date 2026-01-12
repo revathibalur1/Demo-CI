@@ -1,0 +1,14 @@
+name: Secondary CI
+
+on:
+  workflow_dispatch:  # manual trigger
+  workflow_run:
+    workflows: ["Main CI"]
+    types: [completed]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: echo "Secondary CI: Running tests"
